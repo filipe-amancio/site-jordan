@@ -4,8 +4,8 @@
 
 ## Agora
 
-- **Fase atual:** 2 — Nicho regulado (não iniciada)
-- **Próximo passo:** confirmar se há nicho regulado (provavelmente não) e registrar no BRIEF §2 as regras de uso de marca (aviso conceitual, créditos de imagem, `noindex`?)
+- **Fase atual:** 3 — Direção criativa (não iniciada)
+- **Próximo passo:** ler o BRIEF e a análise visual e propor as direções criativas (pranchas em `projeto/pranchas/`)
 - **Modelo recomendado:** Opus
 - **Última atualização:** 2026-10-17 por Filipe Amancio
 
@@ -15,7 +15,7 @@
 |---|---|---|---|
 | 0 | Ambiente | concluída | — |
 | 1 | Briefing | concluída | `projeto/BRIEF.md` |
-| 2 | Nicho regulado | não iniciada | `projeto/BRIEF.md` §2 |
+| 2 | Nicho regulado | concluída | `projeto/BRIEF.md` §2 |
 | 3 | Direção criativa | não iniciada | `projeto/DIRECAO.md` |
 | 4 | Copy | não iniciada | `projeto/COPY.md` |
 | 5 | Stack | não iniciada | seção "Stack" abaixo |
@@ -32,6 +32,7 @@
 - 2026-10-17 — Usar nomes **e logos** Nike/Jordan (Swoosh, Jumpman, Wings) e **fotos oficiais da Nike**, ciente do risco de takedown (aprovado por Filipe Amancio)
 - 2026-10-17 — Formato hub da linha AJ1: Chicago completa, outras cores "em breve" em silhueta; "comprar" simulado sem coleta de dados; clima ousado; copy em português; prazo tranquilo; aviso leva ao contato da BrandForge (aprovado por Filipe Amancio)
 - 2026-10-17 — BRIEF da fase 1 aprovado (aprovado por Filipe Amancio)
+- 2026-10-17 — Nicho não regulado; 8 regras para a copy no BRIEF §2 (aviso conceitual em todas as páginas, sem preço/escassez, fatos com fonte, sem depoimentos, crédito nas fotos, logos sem redesenho, zero coleta de dados, `noindex` recomendado) (aprovado por Filipe Amancio)
 - 2026-10-17 — `main` local baseado no commit inicial do remoto (mantém o `LICENSE`); zip do template no `.gitignore` (aprovado por Filipe Amancio)
 
 ## Stack (fase 5)
@@ -65,3 +66,4 @@
 
 - 2026-10-17 — Template extraído do zip, git iniciado com origin pessoal, dependências instaladas, `npm run verificar` passou. Análise visual do Air Jordan 1 salva em `projeto/referencias/`.
 - 2026-10-17 — Fase 1: briefing por entrevista; BRIEF aprovado (trilha B, hub AJ1 com Chicago, conceito para portfólio da BrandForge).
+- 2026-10-17 — Fase 2: nicho não regulado; regras de marca, CDC, direito autoral e LGPD aprovadas (BRIEF §2).

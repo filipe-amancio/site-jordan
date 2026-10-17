@@ -21,8 +21,19 @@ Fonte das informações: entrevista com Filipe Amancio em 17/10/2026 · análise
 
 ## 2. Nicho regulado (fase 2)
 
-- Nicho regulado? a confirmar na fase 2 (provavelmente não; o ponto sensível é **marca registrada**, não conselho profissional).
-- Uso de marca (decidido na fase 1): **nomes e logos** (Nike, Jordan, Air Jordan, Swoosh, Jumpman, Wings) e **fotos oficiais da Nike**, por escolha de Filipe ciente do risco de pedido de remoção (takedown). Mitigação mínima: aviso "Projeto conceitual por BrandForge, sem vínculo com a Nike, Inc. ou a Jordan Brand" visível, compra que não executa nada e créditos das imagens.
+- Nicho regulado? **não** (não há conselho de classe para calçados/moda). Valem os limites gerais (CDC, direito autoral, marca, LGPD); o ponto sensível é **marca registrada**.
+- Uso de marca (decidido na fase 1): **nomes e logos** (Nike, Jordan, Air Jordan, Swoosh, Jumpman, Wings) e **fotos oficiais da Nike**, por escolha de Filipe ciente do risco de pedido de remoção (takedown).
+- Regras para a copy e o site:
+  1. Aviso "Projeto conceitual por BrandForge, sem vínculo com a Nike, Inc. ou a Jordan Brand" no rodapé de todas as páginas e no modal de compra. — CDC art. 37 §1º; Lei 9.279/96 art. 195
+  2. Sem preço em reais, sem "frete grátis", "últimas unidades", prazo de entrega ou escassez; "Comprar" abre o aviso, sem simular checkout. — CDC arts. 30, 31 e 37
+  3. Fatos históricos, datas e números só com fonte citada (levantada na fase 4). — CDC art. 37
+  4. Sem depoimentos, avaliações, estrelas ou "mais vendido". — CDC art. 37; regras do template
+  5. Crédito em toda foto oficial ("Imagem: Nike, Inc.", em nota de créditos) e origem de cada arquivo registrada em `projeto/referencias/`. — Lei 9.610/98 arts. 79 §1º e 108
+  6. Logos só a partir dos arquivos fornecidos, sem redesenho, distorção ou recolor fora do padrão da marca. — Lei 9.279/96 arts. 129–131
+  7. Zero coleta de dados: seletor de tamanho só no navegador; analytics, se houver, sem cookies (ex.: Vercel Analytics), sem banner. — LGPD arts. 6º e 7º
+  8. `noindex` recomendado (não aparecer no Google como site da Jordan; portfólio por link direto); decisão final na fase 6.
+- Confirmação: regras aprovadas por Filipe Amancio em 17/10/2026; não há conselho a consultar. Não é parecer jurídico.
+- Material recebido x regras: só a análise visual até agora, sem conflito. Fotos: exigir a origem de cada uma (regra 5).
 
 ## 3. Dados do cliente
 
