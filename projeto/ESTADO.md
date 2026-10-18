@@ -4,8 +4,8 @@
 
 ## Agora
 
-- **Fase atual:** 5 — Stack (não iniciada)
-- **Próximo passo:** ler a skill `stack-web` e decidir as camadas (a vista explodida pede GSAP + ScrollTrigger para a faixa presa); atualizar `next` para 16.4.x (pendência do `npm audit`)
+- **Fase atual:** 6 — Construção (não iniciada)
+- **Próximo passo:** ler `fases/06-construcao.md`, montar tokens (paleta e Archivo da direção B) e dados em `lib/site.ts`, depois construir seção a seção começando pela home. Fotos e logos ainda pendentes: usar provisórios marcados
 - **Modelo recomendado:** Sonnet
 - **Última atualização:** 2026-10-18 por Filipe Amancio
 
@@ -18,7 +18,7 @@
 | 2 | Nicho regulado | concluída | `projeto/BRIEF.md` §2 |
 | 3 | Direção criativa | concluída | `projeto/DIRECAO.md` |
 | 4 | Copy | concluída | `projeto/COPY.md` |
-| 5 | Stack | não iniciada | seção "Stack" abaixo |
+| 5 | Stack | concluída | seção "Stack" abaixo |
 | 6 | Construção | não iniciada | código em `app/`, `components/`, `lib/` |
 | 7 | Revisão | não iniciada | `projeto/REVISAO.md` |
 | 8 | Preview e feedback | não iniciada | `projeto/FEEDBACK.md` |
@@ -41,10 +41,18 @@
 - 2026-10-17 — Tom de voz da copy: atitude, provocador, de rua; provocação só com fato verificável (aprovado por Filipe Amancio)
 - 2026-10-17 — Copy sem travessão; rótulos únicos "Comprar" (compra) e "Falar com a BrandForge" (contato) (aprovado por Filipe Amancio)
 - 2026-10-18 — **Copy completa aprovada** (`projeto/COPY.md`): home, /chicago, rodapé, modal de compra, 404, SEO e Open Graph; cores "em breve": Bred, Royal, Black Toe; "Banned" só como campanha da Nike (a carta da NBA era sobre o Air Ship); revisão final aplicada (aprovado por Filipe Amancio)
+- 2026-10-18 — **Stack**: base + GSAP/ScrollTrigger só na vista explodida; sem Lenis, Motion, SplitText, 3D, View Transitions, Rive e Lottie; `next` e `eslint-config-next` 16.3.6 → 16.4.2 (16.4.1 corrige duas falhas críticas de execução remota) + `npm audit fix` sem `--force`; avisos restantes do eslint (dev) aceitos (aprovado por Filipe Amancio)
 
 ## Stack (fase 5)
 
-- Base: Next.js + TypeScript + Tailwind (template)
+- Base: Next.js 16.4.2 + TypeScript + Tailwind (template)
+- GSAP + ScrollTrigger (`gsap` 3.15.0 + `@gsap/react` 2.1.2): **sim, só na vista explodida** de `/chicago` (faixa presa, deslize horizontal com scrub suavizado para dar a inércia, régua de avanço, assentamento de cada vista). Movimento reduzido: vistas empilhadas na vertical, sem pin. No celular a faixa vira lista vertical (DIRECAO)
+- Lenis: não (a inércia vem do scrub; não sequestrar a rolagem) — removido
+- Motion: não (modal de "Comprar" com `<dialog>` nativo, seletor de tamanho e menu em CSS) — removido
+- SplitText: não (o H1 é o LCP)
+- 3D/WebGL, View Transitions, Rive, Lottie: não
+- Dados e segurança: nada a proteger (sem formulário, login, pagamento ou coleta; "Comprar" é simulado). `seguranca-web` não entra enquanto isso não mudar
+- `npm audit`: 0 vulnerabilidades nas dependências de produção (`--omit=dev`). Restam 5 "high" só em desenvolvimento, na cadeia `eslint-config-next` → `@next/eslint-plugin-next` → `fast-glob` → `micromatch` → `braces`, sem correção publicada (a sugestão do npm é rebaixar para 14.x, não aplicar). Risco aceito; conferir de novo na fase 9
 
 ## Construção (fase 6)
 
@@ -53,8 +61,6 @@
 
 ## Pendências
 
-- [ ] Atualizar `next` 16.3.6 → 16.4.x (e `eslint-config-next` junto): `npm audit` aponta 8 vulnerabilidades "high" (next, sharp, braces, source-map-js) — **quem:** nós, na fase 5 — desde 2026-10-17
-- [ ] Playwright MCP: as ferramentas só aparecem numa sessão nova depois do `npm install`; reabrir o Claude Code e testar (`about:blank` + screenshot) — **quem:** nós — desde 2026-10-17
 - [ ] Remote `template` (BrandForge) não configurado: a URL leva a conta da empresa; decidir na fase 10 se o portfólio vai para o template — **quem:** Filipe — desde 2026-10-17
 - [ ] Fotos oficiais do AJ1 Chicago (lateral, frente, trás, sola, detalhes; rotação se houver), com a origem de cada uma. A direção B **exige as quatro vistas** (lateral, frente, trás, sola) recortadas sem halo, para fundo escuro — **quem:** Filipe — desde 2026-10-17
 - [ ] Arquivos dos logos (SVG): Swoosh, Jumpman, Wings — **quem:** Filipe — desde 2026-10-17
@@ -78,3 +84,4 @@
 - 2026-10-17 — Fase 2: nicho não regulado; regras de marca, CDC, direito autoral e LGPD aprovadas (BRIEF §2).
 - 2026-10-17 — Fase 3: conceito "peças sobrepostas", referência desenho técnico, três direções com pranchas; escolhida a B (prancha de engenharia). Vocabulário de calçado e origem da Big Shoulders conferidos por uma segunda sessão do Claude (nike-site-fa), anotados no DIRECAO.
 - 2026-10-18 — Fase 4: copy escrita seção por seção, tom de rua com fatos com fonte (levantados pela sessão nike-site-fa, registrados no COPY). Mito "banido pela NBA" tratado como campanha.
+- 2026-10-18 — Fase 5: stack definida (GSAP só na vista explodida); Lenis e Motion removidos; Next 16.4.2 (notas de versão e `npm audit` conferidos pela sessão nike-site-06); `npm run verificar` passou; Playwright MCP testado (`about:blank` + screenshot ok).
