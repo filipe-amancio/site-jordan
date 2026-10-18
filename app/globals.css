@@ -1,8 +1,103 @@
 @import "tailwindcss";
 
-/* Tokens de cor, fonte e movimento entram aqui na fase 6, a partir de projeto/DIRECAO.md:
-   @theme { --color-...: ...; }  e  @theme inline { --font-display: var(--font-...-next); }
-   Tailwind v4: não existe tailwind.config.js, os tokens vivem neste arquivo. */
+/* Tokens da direção B, "Prancha de engenharia" (projeto/DIRECAO.md). Tailwind v4: os tokens vivem aqui. */
+@theme {
+  --color-asfalto: #16171a; /* fundo de toda a página */
+  --color-borracha: #2a2c31; /* superfícies e linhas da grade */
+  --color-couro: #f2f2f0; /* texto (16,0:1 sobre o asfalto) */
+  --color-sola: #e0283f; /* grandes planos, números e "Comprar"; como texto, só grande (3,9:1) */
+  --color-cota: #9a9ca1; /* texto secundário e cotas (6,5:1) */
+
+  /* Escala 1.25 a partir de 16px */
+  --text-cota: 0.8rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-4xl: 3.052rem;
+  --text-5xl: 3.815rem;
+  --text-6xl: 4.768rem;
+  --text-7xl: 5.96rem;
+
+  /* Movimento com massa: desacelera e assenta */
+  --ease-assenta: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Forma reta: raio zero em tudo */
+  --radius-*: initial;
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo);
+}
+
+/* Archivo em três larguras, como peças cortadas do mesmo couro */
+@utility largura-expandida {
+  font-stretch: 125%;
+}
+@utility largura-condensada {
+  font-stretch: 62%;
+}
+
+/* Display: caixa alta só no H1, no nome da peça e no botão (regra da DIRECAO) */
+@utility display {
+  font-stretch: 125%;
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+}
+
+/* Cota: Archivo condensada, cinza, pequena */
+@utility cota {
+  font-stretch: 62%;
+  font-size: var(--text-cota);
+  line-height: 1.3;
+  color: var(--color-cota);
+}
+
+/* Grade de desenho visível: organiza as vistas como numa prancha real */
+@utility grade {
+  background-image:
+    linear-gradient(var(--color-borracha) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-borracha) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: -1px -1px;
+}
+
+/* Largura útil da prancha: 16px de margem no celular, 64px no desktop */
+@utility moldura {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90rem;
+  padding-inline: 1rem;
+  @media (width >= 48rem) {
+    padding-inline: 4rem;
+  }
+}
+
+@layer base {
+  html {
+    background-color: var(--color-asfalto);
+    color: var(--color-couro);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    background-color: var(--color-asfalto);
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-couro);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background-color: var(--color-sola);
+    color: var(--color-asfalto);
+  }
+  dialog::backdrop {
+    background-color: rgb(22 23 26 / 0.85);
+  }
+}
 
 /* Rede de segurança para animações e transições CSS. GSAP e Motion têm tratamento próprio
    (skill stack-web). Não use scroll-behavior: smooth no html: quebra o ScrollTrigger. */
