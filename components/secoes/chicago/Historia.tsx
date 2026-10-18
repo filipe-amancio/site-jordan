@@ -25,7 +25,10 @@ export function Historia() {
           ]}
         />
       </div>
-      <p className="display mt-12 text-2xl md:text-3xl">Toda volta do Chicago olha para 1985.</p>
+      {/* Fecho em plano vermelho: o vermelho em grande área, não em detalhe (DIRECAO, riscos) */}
+      <p className="display mt-16 text-balance bg-sola px-5 py-8 text-2xl text-asfalto md:mt-24 md:px-10 md:py-14 md:text-5xl">
+        Toda volta do Chicago olha para 1985.
+      </p>
     </section>
   );
 }

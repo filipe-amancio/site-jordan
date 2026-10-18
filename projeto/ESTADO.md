@@ -65,7 +65,7 @@
 | / · legado (régua técnica) | ok | ok (2026-10-18, aprovado) | — |
 | / · a forma (chamadas numeradas) | ok | ok (2026-10-18, aprovado) | — |
 | / · as cores (Chicago em destaque, amostras) | ok | ok (2026-10-18, aprovado) | — |
-| /chicago · hero + barra fixa + modal | ok | — | — |
+| /chicago · hero + barra fixa + modal | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · história | ok | — | — |
 | /chicago · vista explodida (estática) | ok | — | pendente (etapa D) |
 | /chicago · materiais | ok | — | — |
