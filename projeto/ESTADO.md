@@ -44,6 +44,7 @@
 - 2026-10-18 — **Stack**: base + GSAP/ScrollTrigger só na vista explodida; sem Lenis, Motion, SplitText, 3D, View Transitions, Rive e Lottie; `next` e `eslint-config-next` 16.3.6 → 16.4.2 (16.4.1 corrige duas falhas críticas de execução remota) + `npm audit fix` sem `--force`; avisos restantes do eslint (dev) aceitos (aprovado por Filipe Amancio)
 
 - 2026-10-18 — **Hero da home com vídeo** (`public/videos/hero.mp4`, cópia de `fotos-videos/Sneaker_moving_through_smoke_water_…mp4`) no lugar da foto lateral: mudo, em loop, poster `hero-poster.jpg`, botão "Pausar vídeo"/"Tocar vídeo", parado no poster com movimento reduzido. Altura limitada pela tela para H1 e carimbo ficarem acima da dobra. O hero do /chicago continua com a foto lateral (pedido de Filipe Amancio)
+- 2026-10-18 — Vídeo do hero toca sozinho ao entrar (autoPlay nativo); com movimento reduzido fica parado no poster, com botão para tocar (aprovado por Filipe Amancio)
 
 ## Stack (fase 5)
 
