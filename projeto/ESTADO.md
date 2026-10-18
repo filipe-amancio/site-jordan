@@ -4,8 +4,8 @@
 
 ## Agora
 
-- **Fase atual:** 6 — Construção (não iniciada)
-- **Próximo passo:** ler `fases/06-construcao.md`, montar tokens (paleta e Archivo da direção B) e dados em `lib/site.ts`, depois construir seção a seção começando pela home. Fotos e logos ainda pendentes: usar provisórios marcados
+- **Fase atual:** 6 — Construção (em andamento: etapa A concluída)
+- **Próximo passo:** etapa B (seção a seção), começando pelo hero da home; screenshot 375/1440 e aprovação de cada seção
 - **Modelo recomendado:** Sonnet
 - **Última atualização:** 2026-10-18 por Filipe Amancio
 
@@ -19,7 +19,7 @@
 | 3 | Direção criativa | concluída | `projeto/DIRECAO.md` |
 | 4 | Copy | concluída | `projeto/COPY.md` |
 | 5 | Stack | concluída | seção "Stack" abaixo |
-| 6 | Construção | não iniciada | código em `app/`, `components/`, `lib/` |
+| 6 | Construção | em andamento | código em `app/`, `components/`, `lib/` |
 | 7 | Revisão | não iniciada | `projeto/REVISAO.md` |
 | 8 | Preview e feedback | não iniciada | `projeto/FEEDBACK.md` |
 | 9 | Lançamento | não iniciada | seção "Lançamento" abaixo |
@@ -58,6 +58,17 @@
 
 | Seção | Estrutura | Conferida 375/1440 | Animação |
 |---|---|---|---|
+| / · hero | ok | — | — |
+| / · legado | ok | — | — |
+| / · a forma | ok | — | — |
+| / · as cores | ok | — | — |
+| /chicago · hero + barra fixa + modal | ok | — | — |
+| /chicago · história | ok | — | — |
+| /chicago · vista explodida (estática) | ok | — | pendente (etapa D) |
+| /chicago · materiais | ok | — | — |
+| /chicago · outras cores | ok | — | — |
+| rodapé (todas) | ok | — | — |
+| 404 | ok | — | — |
 
 ## Pendências
 
@@ -71,7 +82,10 @@
 
 ## Provisórios a trocar antes de publicar
 
-- Rodapé e modal: "Falar com a BrandForge" sem destino até chegar o contato (a preencher)
+- Rodapé e modal: "Falar com a BrandForge" sem destino até chegar o contato (a preencher); `site.contatoBrandForge` vazio, o botão aparece inativo
+- Fotos: todas as imagens são molduras `FotoProvisoria` (role="img" com o alt aprovado), sem foto de banco; viram `next/image` quando as oficiais chegarem
+- Logo do cabeçalho: caixa tracejada "logo" no lugar do Jumpman
+- Favicon: ainda não existe (404 no console); entra na etapa C
 
 ## Lançamento (fase 9)
 
@@ -85,3 +99,4 @@
 - 2026-10-17 — Fase 3: conceito "peças sobrepostas", referência desenho técnico, três direções com pranchas; escolhida a B (prancha de engenharia). Vocabulário de calçado e origem da Big Shoulders conferidos por uma segunda sessão do Claude (nike-site-fa), anotados no DIRECAO.
 - 2026-10-18 — Fase 4: copy escrita seção por seção, tom de rua com fatos com fonte (levantados pela sessão nike-site-fa, registrados no COPY). Mito "banido pela NBA" tratado como campanha.
 - 2026-10-18 — Fase 5: stack definida (GSAP só na vista explodida); Lenis e Motion removidos; Next 16.4.2 (notas de versão e `npm audit` conferidos pela sessão nike-site-06); `npm run verificar` passou; Playwright MCP testado (`about:blank` + screenshot ok).
+- 2026-10-18 — Fase 6, etapa A: `lib/site.ts` (WebSite, nav, cores, tamanhos, fontes), tokens da direção B no `globals.css`, Archivo variável com eixo `wdth`, todas as seções de `/` e `/chicago` + rodapé, modal de compra (`<dialog>`) e 404 com a copy exata. Conferido em 375 e 1440: sem scroll horizontal, 1 H1, modal abre e marca tamanho; lint e tsc limpos.
