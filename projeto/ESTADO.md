@@ -62,7 +62,7 @@
 | Seção | Estrutura | Conferida 375/1440 | Animação |
 |---|---|---|---|
 | / · hero (vídeo) | ok | ok (2026-10-18, aprovado) | vídeo em autoplay |
-| / · legado | ok | — | — |
+| / · legado (régua técnica) | ok | ok (2026-10-18, aprovado) | — |
 | / · a forma | ok | — | — |
 | / · as cores | ok | — | — |
 | /chicago · hero + barra fixa + modal | ok | — | — |
@@ -88,6 +88,7 @@
 - Rodapé e modal: "Falar com a BrandForge" sem destino até chegar o contato (a preencher); `site.contatoBrandForge` vazio, o botão aparece inativo
 - Fotos: todas as imagens são molduras `FotoProvisoria` (role="img" com o alt aprovado), sem foto de banco; viram `next/image` quando as oficiais chegarem
 - Logo do cabeçalho: caixa tracejada "logo" no lugar do Jumpman
+- "A forma": posição dos marcadores 1–3 sobre a foto é aproximada (`posicao` em `components/secoes/home/Forma.tsx`); ajustar contra a foto oficial
 - Favicon: ainda não existe (404 no console); entra na etapa C
 - Vídeo do hero: 5,7 MB sem compressão (8 s, 1280×720); comprimir (meta ~1,5 MB, + WebM) antes da fase 9. Origem: gerado por IA (confirmado por Filipe em 2026-10-18); crédito "Vídeo da abertura: gerado por IA para este projeto." nos "Créditos e fontes"
 - Rótulos "Pausar vídeo"/"Tocar vídeo" aprovados por Filipe em 2026-10-18 (fora do COPY.md, acessibilidade WCAG 2.2.2)

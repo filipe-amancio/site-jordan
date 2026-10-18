@@ -1,15 +1,37 @@
 import Link from "next/link";
 import { FotoProvisoria } from "@/components/FotoProvisoria";
 
+// Posição de cada marcador sobre a vista lateral (em % da imagem). PROVISÓRIO: ajustar
+// contra a foto oficial quando chegar (pendência no ESTADO).
 const chamadas = [
-  { peca: "Cano alto", texto: "Sobe acima do tornozelo. Lá em cima, na aba do tornozelo, mora o Wings." },
-  { peca: "Biqueira perfurada", texto: "A frente furada que você reconhece do outro lado da rua." },
+  {
+    peca: "Cano alto",
+    texto: "Sobe acima do tornozelo. Lá em cima, na aba do tornozelo, mora o Wings.",
+    posicao: "left-[34%] top-[16%]",
+  },
+  {
+    peca: "Biqueira perfurada",
+    texto: "A frente furada que você reconhece do outro lado da rua.",
+    posicao: "left-[82%] top-[62%]",
+  },
   {
     peca: "Couro em camadas",
     texto:
       "Sobreposições no bico, nos ilhós e no talão, costuradas por cima do cabedal. Cada camada é uma peça; cada peça pode ganhar uma cor.",
+    posicao: "left-[16%] top-[58%]",
   },
 ];
+
+function Marcador({ numero, className = "" }: { numero: number; className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`display flex size-9 items-center justify-center bg-sola text-lg text-asfalto ${className}`}
+    >
+      {numero}
+    </span>
+  );
+}
 
 export function Forma() {
   return (
@@ -20,19 +42,33 @@ export function Forma() {
         </h2>
         <p className="mt-5 max-w-[36rem] text-lg">No AJ1, a cor troca de lugar. As peças, não.</p>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-          <FotoProvisoria
-            alt="Air Jordan 1 Chicago em vista lateral externa: cabedal branco, sobreposições vermelhas, Swoosh preto e solado vermelho."
-            rotulo="vista lateral com chamadas"
-            proporcao="aspect-[4/3]"
-          />
-          <ol className="grid content-start self-start gap-px bg-borracha">
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-16">
+          <figure>
+            <div className="relative">
+              <FotoProvisoria
+                alt="Air Jordan 1 Chicago em vista lateral externa: cabedal branco, sobreposições vermelhas, Swoosh preto e solado vermelho."
+                rotulo="vista lateral com chamadas"
+                proporcao="aspect-[4/3]"
+              />
+              {chamadas.map((c, i) => (
+                <Marcador key={c.peca} numero={i + 1} className={`absolute -translate-x-1/2 -translate-y-1/2 ${c.posicao}`} />
+              ))}
+              {/* Marcas de canto da prancha */}
+              <span aria-hidden="true" className="absolute -left-2 -top-2 size-4 border-l border-t border-couro" />
+              <span aria-hidden="true" className="absolute -right-2 -top-2 size-4 border-r border-t border-couro" />
+              <span aria-hidden="true" className="absolute -bottom-2 -left-2 size-4 border-b border-l border-couro" />
+              <span aria-hidden="true" className="absolute -bottom-2 -right-2 size-4 border-b border-r border-couro" />
+            </div>
+            <figcaption className="cota mt-4">vista lateral · chamadas 1 a 3</figcaption>
+          </figure>
+
+          <ol className="grid gap-px self-center bg-borracha">
             {chamadas.map((c, i) => (
-              <li key={c.peca} className="grid grid-cols-[3rem_1fr] gap-4 bg-asfalto py-5">
-                <span className="display text-3xl text-sola">{i + 1}</span>
+              <li key={c.peca} className="grid grid-cols-[2.25rem_1fr] gap-5 bg-asfalto py-6 first:pt-0 last:pb-0">
+                <Marcador numero={i + 1} />
                 <div>
                   <h3 className="display text-lg uppercase">{c.peca}</h3>
-                  <p className="mt-2 text-base">{c.texto}</p>
+                  <p className="mt-2 text-base md:text-lg">{c.texto}</p>
                 </div>
               </li>
             ))}
