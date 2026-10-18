@@ -70,7 +70,7 @@
 | /chicago · vista explodida (estática) | ok | — | pendente (etapa D) |
 | /chicago · materiais | ok | — | — |
 | /chicago · outras cores | ok | — | — |
-| rodapé (todas) | ok | — | — |
+| rodapé (todas; carimbo da prancha) | ok | ok (2026-10-18, aprovado) | — |
 | 404 | ok | — | — |
 
 ## Pendências

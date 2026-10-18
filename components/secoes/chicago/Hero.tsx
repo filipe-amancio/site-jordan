@@ -5,8 +5,9 @@ import { FotoProvisoria } from "@/components/FotoProvisoria";
 export function HeroChicago() {
   return (
     <section aria-labelledby="hero-titulo" className="grade border-b border-borracha">
-      <div className="moldura pb-10 pt-8 md:pb-16 md:pt-16">
-        <figure className="mx-auto max-w-[62rem]">
+      <div className="moldura pb-10 pt-8 md:pb-12 md:pt-10">
+        {/* Altura da foto limitada pela tela para o H1 e o carimbo caberem acima da dobra */}
+        <figure className="mx-auto max-w-[min(62rem,max(20rem,calc((100dvh-31rem)*16/9)))]">
           <FotoProvisoria
             alt="Air Jordan 1 Chicago em vista lateral externa: cabedal branco, sobreposições vermelhas, Swoosh preto e solado vermelho."
             rotulo="vista lateral, recorte sem halo"
@@ -14,7 +15,7 @@ export function HeroChicago() {
           <figcaption className="cota mt-2 border-t border-cota pt-1 text-center">vista lateral</figcaption>
         </figure>
 
-        <div className="mt-8 grid gap-8 md:mt-12 lg:grid-cols-[1fr_22rem] lg:items-end">
+        <div className="mt-8 grid gap-8 md:mt-8 lg:grid-cols-[1fr_22rem] lg:items-end">
           <div>
             <h1 id="hero-titulo" className="display text-[clamp(2.2rem,6.6vw,6rem)] uppercase">
               AIR JORDAN 1
