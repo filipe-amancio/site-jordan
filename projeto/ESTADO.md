@@ -88,7 +88,7 @@
 - Fotos: todas as imagens são molduras `FotoProvisoria` (role="img" com o alt aprovado), sem foto de banco; viram `next/image` quando as oficiais chegarem
 - Logo do cabeçalho: caixa tracejada "logo" no lugar do Jumpman
 - Favicon: ainda não existe (404 no console); entra na etapa C
-- Vídeo do hero: 5,7 MB sem compressão (8 s, 1280×720); comprimir (meta ~1,5 MB, + WebM) antes da fase 9. Origem do vídeo a confirmar (parece gerado por IA, não foto oficial da Nike) e crédito correspondente nos "Créditos e fontes"
+- Vídeo do hero: 5,7 MB sem compressão (8 s, 1280×720); comprimir (meta ~1,5 MB, + WebM) antes da fase 9. Origem: gerado por IA (confirmado por Filipe em 2026-10-18); crédito "Vídeo da abertura: gerado por IA para este projeto." nos "Créditos e fontes"
 - Rótulos "Pausar vídeo"/"Tocar vídeo" não estão no COPY.md (acessibilidade, WCAG 2.2.2): confirmar texto
 
 ## Lançamento (fase 9)

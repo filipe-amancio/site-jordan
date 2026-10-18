@@ -24,6 +24,7 @@ export function Rodape() {
             Créditos e fontes
           </summary>
           <div className="grid gap-4 pb-4 pt-2">
+            <p className="text-base">Vídeo da abertura: gerado por IA para este projeto.</p>
             <p className="text-base">Imagens: Nike, Inc.</p>
             <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
               {site.fontes.map((f) => (
