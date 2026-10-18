@@ -63,7 +63,7 @@
 |---|---|---|---|
 | / · hero (vídeo) | ok | ok (2026-10-18, aprovado) | vídeo em autoplay |
 | / · legado (régua técnica) | ok | ok (2026-10-18, aprovado) | — |
-| / · a forma | ok | — | — |
+| / · a forma (chamadas numeradas) | ok | ok (2026-10-18, aprovado) | — |
 | / · as cores | ok | — | — |
 | /chicago · hero + barra fixa + modal | ok | — | — |
 | /chicago · história | ok | — | — |
