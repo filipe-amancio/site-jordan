@@ -14,12 +14,16 @@ export function VideoHero({ src, poster, rotulo }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [tocando, setTocando] = useState(false);
 
+  // O vídeo começa sozinho ao entrar no site (autoPlay nativo, não espera o JS). Só para se o
+  // sistema pedir movimento reduzido.
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
-    const reduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduzido.matches) return;
-    video.play().catch(() => setTocando(false));
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      video.pause();
+      return;
+    }
+    if (video.paused) video.play().catch(() => setTocando(false));
   }, []);
 
   function alternar() {
@@ -35,10 +39,11 @@ export function VideoHero({ src, poster, rotulo }: Props) {
         ref={ref}
         src={src}
         poster={poster}
+        autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-label={rotulo}
         onPlay={() => setTocando(true)}
         onPause={() => setTocando(false)}
