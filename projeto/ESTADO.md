@@ -43,6 +43,8 @@
 - 2026-10-18 — **Copy completa aprovada** (`projeto/COPY.md`): home, /chicago, rodapé, modal de compra, 404, SEO e Open Graph; cores "em breve": Bred, Royal, Black Toe; "Banned" só como campanha da Nike (a carta da NBA era sobre o Air Ship); revisão final aplicada (aprovado por Filipe Amancio)
 - 2026-10-18 — **Stack**: base + GSAP/ScrollTrigger só na vista explodida; sem Lenis, Motion, SplitText, 3D, View Transitions, Rive e Lottie; `next` e `eslint-config-next` 16.3.6 → 16.4.2 (16.4.1 corrige duas falhas críticas de execução remota) + `npm audit fix` sem `--force`; avisos restantes do eslint (dev) aceitos (aprovado por Filipe Amancio)
 
+- 2026-10-18 — **Hero da home com vídeo** (`public/videos/hero.mp4`, cópia de `fotos-videos/Sneaker_moving_through_smoke_water_…mp4`) no lugar da foto lateral: mudo, em loop, poster `hero-poster.jpg`, botão "Pausar vídeo"/"Tocar vídeo", parado no poster com movimento reduzido. Altura limitada pela tela para H1 e carimbo ficarem acima da dobra. O hero do /chicago continua com a foto lateral (pedido de Filipe Amancio)
+
 ## Stack (fase 5)
 
 - Base: Next.js 16.4.2 + TypeScript + Tailwind (template)
@@ -86,6 +88,8 @@
 - Fotos: todas as imagens são molduras `FotoProvisoria` (role="img" com o alt aprovado), sem foto de banco; viram `next/image` quando as oficiais chegarem
 - Logo do cabeçalho: caixa tracejada "logo" no lugar do Jumpman
 - Favicon: ainda não existe (404 no console); entra na etapa C
+- Vídeo do hero: 5,7 MB sem compressão (8 s, 1280×720); comprimir (meta ~1,5 MB, + WebM) antes da fase 9. Origem do vídeo a confirmar (parece gerado por IA, não foto oficial da Nike) e crédito correspondente nos "Créditos e fontes"
+- Rótulos "Pausar vídeo"/"Tocar vídeo" não estão no COPY.md (acessibilidade, WCAG 2.2.2): confirmar texto
 
 ## Lançamento (fase 9)
 
