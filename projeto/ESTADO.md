@@ -4,10 +4,10 @@
 
 ## Agora
 
-- **Fase atual:** 4 — Copy (não iniciada)
-- **Próximo passo:** ler BRIEF e DIRECAO (inclui o vocabulário de calçado conferido) e levantar os fatos históricos com fonte para a copy
-- **Modelo recomendado:** Opus
-- **Última atualização:** 2026-10-17 por Filipe Amancio
+- **Fase atual:** 5 — Stack (não iniciada)
+- **Próximo passo:** ler a skill `stack-web` e decidir as camadas (a vista explodida pede GSAP + ScrollTrigger para a faixa presa); atualizar `next` para 16.4.x (pendência do `npm audit`)
+- **Modelo recomendado:** Sonnet
+- **Última atualização:** 2026-10-18 por Filipe Amancio
 
 ## Fases
 
@@ -17,7 +17,7 @@
 | 1 | Briefing | concluída | `projeto/BRIEF.md` |
 | 2 | Nicho regulado | concluída | `projeto/BRIEF.md` §2 |
 | 3 | Direção criativa | concluída | `projeto/DIRECAO.md` |
-| 4 | Copy | não iniciada | `projeto/COPY.md` |
+| 4 | Copy | concluída | `projeto/COPY.md` |
 | 5 | Stack | não iniciada | seção "Stack" abaixo |
 | 6 | Construção | não iniciada | código em `app/`, `components/`, `lib/` |
 | 7 | Revisão | não iniciada | `projeto/REVISAO.md` |
@@ -37,6 +37,10 @@
 - 2026-10-17 — Referência fora do nicho: desenho técnico e moldes (aprovado por Filipe Amancio)
 - 2026-10-17 — **Direção B, "Prancha de engenharia"**: fundo escuro com grade de desenho, Archivo em três larguras, carimbo como navegação e compra, assinatura = vista explodida horizontal (faixa presa). A e C descartadas (aprovado por Filipe Amancio)
 - 2026-10-17 — `main` local baseado no commit inicial do remoto (mantém o `LICENSE`); zip do template no `.gitignore` (aprovado por Filipe Amancio)
+- 2026-10-17 — Mapa de seções da copy: `/` (hero, legado, a forma, as cores, rodapé) e `/chicago` (hero com carimbo, história, vista explodida, materiais, outras cores, rodapé) + microtextos (modal de compra, créditos, 404, SEO, Open Graph) (aprovado por Filipe Amancio)
+- 2026-10-17 — Tom de voz da copy: atitude, provocador, de rua; provocação só com fato verificável (aprovado por Filipe Amancio)
+- 2026-10-17 — Copy sem travessão; rótulos únicos "Comprar" (compra) e "Falar com a BrandForge" (contato) (aprovado por Filipe Amancio)
+- 2026-10-18 — **Copy completa aprovada** (`projeto/COPY.md`): home, /chicago, rodapé, modal de compra, 404, SEO e Open Graph; cores "em breve": Bred, Royal, Black Toe; "Banned" só como campanha da Nike (a carta da NBA era sobre o Air Ship); revisão final aplicada (aprovado por Filipe Amancio)
 
 ## Stack (fase 5)
 
@@ -56,10 +60,12 @@
 - [ ] Arquivos dos logos (SVG): Swoosh, Jumpman, Wings — **quem:** Filipe — desde 2026-10-17
 - [ ] Contato da BrandForge para o aviso final (link/e-mail/WhatsApp; entra logo da BrandForge?) — **quem:** Filipe — desde 2026-10-17
 - [ ] Decidir `noindex` do site (fase 6) — **quem:** nós — desde 2026-10-17
+- [ ] Conferir as chamadas da vista explodida e os alts contra as fotos oficiais (etiqueta Nike Air na lingueta, cor da entressola, solado vermelho) — **quem:** nós, na fase 6 — desde 2026-10-18
+- [ ] Faixa do seletor de tamanho (BR 37 a 44) é só demonstração; confirmar ou trocar — **quem:** Filipe — desde 2026-10-18
 
 ## Provisórios a trocar antes de publicar
 
-- 
+- Rodapé e modal: "Falar com a BrandForge" sem destino até chegar o contato (a preencher)
 
 ## Lançamento (fase 9)
 
@@ -71,3 +77,4 @@
 - 2026-10-17 — Fase 1: briefing por entrevista; BRIEF aprovado (trilha B, hub AJ1 com Chicago, conceito para portfólio da BrandForge).
 - 2026-10-17 — Fase 2: nicho não regulado; regras de marca, CDC, direito autoral e LGPD aprovadas (BRIEF §2).
 - 2026-10-17 — Fase 3: conceito "peças sobrepostas", referência desenho técnico, três direções com pranchas; escolhida a B (prancha de engenharia). Vocabulário de calçado e origem da Big Shoulders conferidos por uma segunda sessão do Claude (nike-site-fa), anotados no DIRECAO.
+- 2026-10-18 — Fase 4: copy escrita seção por seção, tom de rua com fatos com fonte (levantados pela sessão nike-site-fa, registrados no COPY). Mito "banido pela NBA" tratado como campanha.
