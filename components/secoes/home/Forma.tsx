@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FotoProvisoria } from "@/components/FotoProvisoria";
+import { MarcasDeCanto } from "@/components/MarcasDeCanto";
 
 // Posição de cada marcador sobre a vista lateral (em % da imagem). PROVISÓRIO: ajustar
 // contra a foto oficial quando chegar (pendência no ESTADO).
@@ -53,11 +54,7 @@ export function Forma() {
               {chamadas.map((c, i) => (
                 <Marcador key={c.peca} numero={i + 1} className={`absolute -translate-x-1/2 -translate-y-1/2 ${c.posicao}`} />
               ))}
-              {/* Marcas de canto da prancha */}
-              <span aria-hidden="true" className="absolute -left-2 -top-2 size-4 border-l border-t border-couro" />
-              <span aria-hidden="true" className="absolute -right-2 -top-2 size-4 border-r border-t border-couro" />
-              <span aria-hidden="true" className="absolute -bottom-2 -left-2 size-4 border-b border-l border-couro" />
-              <span aria-hidden="true" className="absolute -bottom-2 -right-2 size-4 border-b border-r border-couro" />
+              <MarcasDeCanto />
             </div>
             <figcaption className="cota mt-4">vista lateral · chamadas 1 a 3</figcaption>
           </figure>
