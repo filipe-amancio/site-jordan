@@ -68,7 +68,7 @@
 | /chicago · hero + barra fixa + modal | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · história (régua + fecho vermelho) | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · vista explodida (estática, folhas) | ok | ok (2026-10-18, aprovado) | pendente (etapa D) |
-| /chicago · materiais | ok | — | — |
+| /chicago · materiais (cartela de amostras) | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · outras cores | ok | — | — |
 | rodapé (todas; carimbo da prancha) | ok | ok (2026-10-18, aprovado) | — |
 | 404 | ok | — | — |

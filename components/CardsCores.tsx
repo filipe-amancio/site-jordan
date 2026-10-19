@@ -25,8 +25,9 @@ export function CardsCores({ semChicago = false }: Props) {
     >
       {cores.map((cor) => {
         const ativa = Boolean(cor.rota);
-        // Na home: Chicago ocupa a coluna da esquerda; as outras empilham à direita, em linha
-        const emLinha = !ativa && !semChicago;
+        // Cores "em breve" sempre em card compacto (silhueta ao lado do nome). Na home, o Chicago
+        // ocupa a coluna da esquerda e as outras empilham à direita.
+        const emLinha = !ativa;
         return (
           <li
             key={cor.nome}
