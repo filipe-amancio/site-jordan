@@ -4,10 +4,10 @@
 
 ## Agora
 
-- **Fase atual:** 6 — Construção (em andamento: etapas A e B concluídas)
-- **Próximo passo:** etapa C (metadata + openGraph por página com base comum, imagem OG 1200×630 com Archivo Expanded ExtraBold estática em `assets/`, favicon/icon/apple-icon); depois etapa D (GSAP na vista explodida)
+- **Fase atual:** 6 — Construção (em andamento: etapas A, B e C concluídas; etapa D implementada, aguardando aprovação)
+- **Próximo passo:** Filipe aprovar a vista explodida animada (rolar `/chicago` no desktop); com o ok, fechar a fase 6 (`npm run verificar`, ESTADO com fase 7 como próxima, commit `fase 6: construção concluída`)
 - **Modelo recomendado:** Sonnet
-- **Última atualização:** 2026-10-18 por Filipe Amancio
+- **Última atualização:** 2026-10-19 por Filipe Amancio
 
 ## Fases
 
@@ -69,7 +69,7 @@
 | / · as cores (Chicago em destaque, amostras) | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · hero + barra fixa + modal | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · história (régua + fecho vermelho) | ok | ok (2026-10-18, aprovado) | — |
-| /chicago · vista explodida (estática, folhas) | ok | ok (2026-10-18, aprovado) | pendente (etapa D) |
+| /chicago · vista explodida (estática, folhas) | ok | ok (2026-10-18, aprovado) | faixa presa com GSAP (2026-10-19, aguarda aprovação) |
 | /chicago · materiais (cartela de amostras) | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · outras cores (cards compactos) | ok | ok (2026-10-18, aprovado) | — |
 | rodapé (todas; carimbo da prancha) | ok | ok (2026-10-18, aprovado) | — |
@@ -110,3 +110,4 @@
 - 2026-10-18 — Fase 4: copy escrita seção por seção, tom de rua com fatos com fonte (levantados pela sessão nike-site-fa, registrados no COPY). Mito "banido pela NBA" tratado como campanha.
 - 2026-10-18 — Fase 5: stack definida (GSAP só na vista explodida); Lenis e Motion removidos; Next 16.4.2 (notas de versão e `npm audit` conferidos pela sessão nike-site-06); `npm run verificar` passou; Playwright MCP testado (`about:blank` + screenshot ok).
 - 2026-10-18 — Fase 6, etapa A: `lib/site.ts` (WebSite, nav, cores, tamanhos, fontes), tokens da direção B no `globals.css`, Archivo variável com eixo `wdth`, todas as seções de `/` e `/chicago` + rodapé, modal de compra (`<dialog>`) e 404 com a copy exata. Conferido em 375 e 1440: sem scroll horizontal, 1 H1, modal abre e marca tamanho; lint e tsc limpos.
+- 2026-10-19 — Fase 6, etapa D: vista explodida com faixa presa (`PalcoVistas`, GSAP + ScrollTrigger via `lib/gsap.ts`): scrub 0,8, snap por vista sem inércia, foto e número chegam atrasados (folhas sobrepostas), régua preenche em vermelho e marca `aria-current`, clique na régua leva à vista. Só com movimento liberado e tela ≥1024×720; senão (e sem JS) fica empilhada. Layout compacto abaixo de 896 px de altura. Conferido em 1440×900, 1366×768, 1024×768 (tudo cabe, sem scroll horizontal), 375 (empilhada), movimento reduzido ao vivo (reverte), ida e volta entre rotas (um pino só); `npm run verificar` passou.

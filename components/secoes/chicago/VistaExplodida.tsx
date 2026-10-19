@@ -1,9 +1,10 @@
 import { FotoProvisoria } from "@/components/FotoProvisoria";
 import { MarcasDeCanto } from "@/components/MarcasDeCanto";
+import { PalcoVistas } from "@/components/secoes/chicago/PalcoVistas";
 
-// Versão estática (sem JS e com movimento reduzido): as quatro vistas empilhadas, cada uma como
-// uma folha da prancha. Na etapa D, o GSAP + ScrollTrigger usa os data-* abaixo para prender a
-// seção e deslizar a faixa na horizontal, com a régua medindo o avanço.
+// Versão estática (sem JS, com movimento reduzido e no celular): as quatro vistas empilhadas, cada
+// uma como uma folha da prancha. No desktop, o PalcoVistas usa os data-* abaixo para prender a
+// régua e a faixa e deslizar as vistas na horizontal, com a régua medindo o avanço.
 const vistas = [
   {
     id: "vista-lateral",
@@ -85,53 +86,59 @@ export function VistaExplodida() {
           </p>
         </div>
 
-        {/* Régua: quatro segmentos, um por vista. Sem JS, serve de atalho para cada folha. */}
-        <nav aria-label="Vistas do Chicago" className="mt-12">
-          <ol data-regua className="grid grid-cols-4 gap-1">
-            {vistas.map((v, i) => (
-              <li key={v.id}>
-                <a
-                  href={`#${v.id}`}
-                  data-regua-segmento
-                  className="cota flex min-h-11 flex-col justify-end border-t-2 border-couro pt-2 text-base hover:border-sola hover:text-couro"
-                >
-                  <span>
-                    vista {i + 1}/4 <span className="hidden sm:inline">· {v.nome}</span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
+        <PalcoVistas>
+          {/* Régua: quatro segmentos, um por vista. Sem JS, serve de atalho para cada folha. */}
+          <nav aria-label="Vistas do Chicago" className="mt-12">
+            <ol data-regua className="grid grid-cols-4 gap-1">
+              {vistas.map((v, i) => (
+                <li key={v.id}>
+                  <a
+                    href={`#${v.id}`}
+                    data-regua-segmento
+                    className="cota relative flex min-h-11 flex-col justify-end border-t-2 border-couro pt-2 text-base hover:border-sola hover:text-couro"
+                  >
+                    {/* Preenchimento da régua: só aparece com a faixa animada (globals.css) */}
+                    <span data-regua-preenche aria-hidden="true" className="absolute inset-x-0 -top-0.5 hidden h-0.5 bg-sola" />
+                    <span>
+                      vista {i + 1}/4 <span className="hidden sm:inline">· {v.nome}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
 
-        <ol data-faixa className="mt-16 grid gap-20 md:gap-28">
-          {vistas.map((v, i) => (
-            <li key={v.id} id={v.id} data-vista className="scroll-mt-8 border-t border-couro pt-6">
-              <div className="flex items-baseline justify-between gap-6">
-                <h3 className="cota text-base">
-                  vista {i + 1}/4 · {v.nome}
-                </h3>
-                <span aria-hidden="true" className="display text-5xl text-sola md:text-7xl">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-
-              <div className="mt-6 grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
-                <figure>
-                  <div className="relative">
-                    <FotoProvisoria alt={v.alt} rotulo={`vista ${v.nome}`} proporcao="aspect-[4/3]" />
-                    <MarcasDeCanto />
+          <div data-janela>
+            <ol data-faixa className="mt-16 grid gap-20 md:gap-28">
+              {vistas.map((v, i) => (
+                <li key={v.id} id={v.id} data-vista className="scroll-mt-8 border-t border-couro pt-6">
+                  <div className="flex items-baseline justify-between gap-6">
+                    <h3 className="cota text-base">
+                      vista {i + 1}/4 · {v.nome}
+                    </h3>
+                    <span data-vista-numero aria-hidden="true" className="display text-5xl text-sola md:text-7xl">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                </figure>
-                <div className="grid content-start gap-8">
-                  <p className="display text-2xl md:text-4xl">{v.frase}</p>
-                  <Lista titulo="Peças" itens={v.pecas} sinal="peca" />
-                  {v.marcas.length > 0 && <Lista titulo="Marcas" itens={v.marcas} sinal="marca" />}
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
+
+                  <div className="mt-6 grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
+                    <figure data-vista-foto>
+                      <div className="relative">
+                        <FotoProvisoria alt={v.alt} rotulo={`vista ${v.nome}`} proporcao="aspect-[4/3]" />
+                        <MarcasDeCanto />
+                      </div>
+                    </figure>
+                    <div data-vista-texto className="grid content-start gap-8">
+                      <p data-vista-frase className="display text-2xl md:text-4xl">{v.frase}</p>
+                      <Lista titulo="Peças" itens={v.pecas} sinal="peca" />
+                      {v.marcas.length > 0 && <Lista titulo="Marcas" itens={v.marcas} sinal="marca" />}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </PalcoVistas>
       </div>
     </section>
   );

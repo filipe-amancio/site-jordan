@@ -116,3 +116,68 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Vista explodida com a faixa presa (PalcoVistas, só desktop com movimento liberado).
+   Fora da camada de utilitários de propósito: vence as classes da versão empilhada. */
+[data-vistas-animado] {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  padding-block: 2rem;
+}
+/* Janela da faixa: recorta na borda da moldura, não na do conteúdo, para a folha sair pela margem
+   e as marcas de canto aparecerem. Fica dentro do palco porque o pin fixa a largura do palco. */
+[data-vistas-animado] [data-janela] {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  margin-inline: -4rem;
+  padding-inline: 4rem;
+  padding-bottom: 1rem; /* folga para as marcas de canto de baixo */
+  overflow: hidden;
+}
+[data-vistas-animado] [data-regua-preenche] {
+  display: block;
+}
+[data-vistas-animado] [data-regua-segmento][aria-current] {
+  color: var(--color-couro);
+}
+[data-vistas-animado] [data-faixa] {
+  display: flex;
+  flex: 1 0 100%;
+  min-width: 0;
+  gap: 4rem;
+  margin-top: 2rem;
+  will-change: transform;
+}
+[data-vistas-animado] [data-vista] {
+  flex: 0 0 100%;
+}
+/* A foto cabe na altura da tela (a faixa é presa: nada pode passar da dobra) */
+[data-vistas-animado] [data-vista-foto] {
+  max-width: calc((100svh - 23rem) * 4 / 3);
+}
+/* Telas baixas (notebook 1366×768): a folha inteira precisa caber presa, então tudo aperta um pouco */
+@media (height < 56rem) {
+  [data-vistas-animado] {
+    padding-block: 1.25rem;
+  }
+  [data-vistas-animado] [data-faixa] {
+    margin-top: 1.25rem;
+  }
+  [data-vistas-animado] [data-vista-numero] {
+    font-size: var(--text-5xl);
+  }
+  [data-vistas-animado] [data-vista-frase] {
+    font-size: var(--text-2xl);
+  }
+  [data-vistas-animado] [data-vista-texto] {
+    gap: 1.25rem;
+  }
+  [data-vistas-animado] [data-vista-texto] li {
+    padding-block: 0.3rem;
+  }
+  [data-vistas-animado] [data-vista-foto] {
+    max-width: calc((100svh - 18rem) * 4 / 3);
+  }
+}
