@@ -4,8 +4,8 @@
 
 ## Agora
 
-- **Fase atual:** 6 — Construção (em andamento: etapa A concluída)
-- **Próximo passo:** etapa B (seção a seção), começando pelo hero da home; screenshot 375/1440 e aprovação de cada seção
+- **Fase atual:** 6 — Construção (em andamento: etapas A e B concluídas)
+- **Próximo passo:** etapa C (metadata + openGraph por página com base comum, imagem OG 1200×630 com Archivo Expanded ExtraBold estática em `assets/`, favicon/icon/apple-icon); depois etapa D (GSAP na vista explodida)
 - **Modelo recomendado:** Sonnet
 - **Última atualização:** 2026-10-18 por Filipe Amancio
 
@@ -69,9 +69,9 @@
 | /chicago · história (régua + fecho vermelho) | ok | ok (2026-10-18, aprovado) | — |
 | /chicago · vista explodida (estática, folhas) | ok | ok (2026-10-18, aprovado) | pendente (etapa D) |
 | /chicago · materiais (cartela de amostras) | ok | ok (2026-10-18, aprovado) | — |
-| /chicago · outras cores | ok | — | — |
+| /chicago · outras cores (cards compactos) | ok | ok (2026-10-18, aprovado) | — |
 | rodapé (todas; carimbo da prancha) | ok | ok (2026-10-18, aprovado) | — |
-| 404 | ok | — | — |
+| 404 | ok | ok (2026-10-18) | — |
 
 ## Pendências
 

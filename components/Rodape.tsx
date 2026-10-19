@@ -12,7 +12,7 @@ const porVeiculo = site.fontes.reduce<Record<string, string[]>>((grupos, f) => {
 
 export function Rodape() {
   return (
-    <footer id="rodape" className="grade mt-24 border-t border-couro pb-28 md:pb-12">
+    <footer id="rodape" className="grade border-t border-couro pb-28 md:pb-12">
       <div className="moldura grid gap-10 pt-12 md:pt-16 lg:grid-cols-[1fr_28rem] lg:items-end">
         <p className="display max-w-[40rem] text-3xl md:text-5xl">Montado peça por peça pela BrandForge.</p>
 
