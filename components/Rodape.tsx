@@ -51,7 +51,7 @@ export function Rodape() {
               <p>Vídeo da abertura: gerado por IA para este projeto.</p>
               <p>Imagens: Nike, Inc.</p>
             </div>
-            <ul className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
               {Object.entries(porVeiculo).map(([veiculo, urls]) => (
                 <li key={veiculo} className="text-base">
                   <span className="cota text-base">{veiculo}: </span>
@@ -62,9 +62,10 @@ export function Rodape() {
                         href={url}
                         rel="noopener noreferrer"
                         target="_blank"
-                        className="underline decoration-cota underline-offset-4 hover:text-sola"
+                        className="inline-flex min-h-11 items-center underline decoration-cota underline-offset-4 hover:decoration-sola hover:decoration-2"
                       >
                         {urls.length > 1 ? `matéria ${i + 1}` : "matéria"}
+                        <span className="sr-only"> de {veiculo}, abre em nova aba</span>
                       </a>
                     </span>
                   ))}

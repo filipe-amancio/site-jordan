@@ -42,7 +42,7 @@ const vistas = [
 function Lista({ titulo, itens, sinal }: { titulo: string; itens: string[]; sinal: "peca" | "marca" }) {
   return (
     <div>
-      <h3 className="cota text-base">{titulo}</h3>
+      <h4 className="cota text-base">{titulo}</h4>
       <ul className="mt-2 border-t border-borracha">
         {itens.map((item) => (
           <li key={item} className="flex items-center gap-3 border-b border-borracha py-2 text-base">
@@ -108,9 +108,9 @@ export function VistaExplodida() {
           {vistas.map((v, i) => (
             <li key={v.id} id={v.id} data-vista className="scroll-mt-8 border-t border-couro pt-6">
               <div className="flex items-baseline justify-between gap-6">
-                <p className="cota text-base">
+                <h3 className="cota text-base">
                   vista {i + 1}/4 · {v.nome}
-                </p>
+                </h3>
                 <span aria-hidden="true" className="display text-5xl text-sola md:text-7xl">
                   {String(i + 1).padStart(2, "0")}
                 </span>

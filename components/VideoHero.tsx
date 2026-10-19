@@ -52,7 +52,7 @@ export function VideoHero({ src, poster, rotulo }: Props) {
       <button
         type="button"
         onClick={alternar}
-        className="cota absolute bottom-0 right-0 flex min-h-11 items-center border-l border-t border-cota/60 bg-asfalto px-3 text-base text-couro hover:text-sola"
+        className="cota absolute bottom-0 right-0 flex min-h-11 items-center border-l border-t border-cota/60 bg-asfalto px-3 text-base text-couro underline-offset-4 hover:underline"
       >
         {tocando ? "Pausar vídeo" : "Tocar vídeo"}
       </button>

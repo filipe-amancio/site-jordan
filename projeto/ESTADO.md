@@ -44,7 +44,7 @@
 - 2026-10-18 — **Stack**: base + GSAP/ScrollTrigger só na vista explodida; sem Lenis, Motion, SplitText, 3D, View Transitions, Rive e Lottie; `next` e `eslint-config-next` 16.3.6 → 16.4.2 (16.4.1 corrige duas falhas críticas de execução remota) + `npm audit fix` sem `--force`; avisos restantes do eslint (dev) aceitos (aprovado por Filipe Amancio)
 
 - 2026-10-18 — **Hero da home com vídeo** (`public/videos/hero.mp4`, cópia de `fotos-videos/Sneaker_moving_through_smoke_water_…mp4`) no lugar da foto lateral: mudo, em loop, poster `hero-poster.jpg`, botão "Pausar vídeo"/"Tocar vídeo", parado no poster com movimento reduzido. Altura limitada pela tela para H1 e carimbo ficarem acima da dobra. O hero do /chicago continua com a foto lateral (pedido de Filipe Amancio)
-- 2026-10-18 — Vídeo do hero toca sozinho ao entrar (autoPlay nativo); com movimento reduzido fica parado no poster, com botão para tocar (aprovado por Filipe Amancio)
+- 2026-10-18 — Vídeo do hero toca sozinho ao entrar (autoPlay nativo); com movimento reduzido fica parado no poster, com botão para tocar (aprovado por Filipe Amancio). Decisão consciente (revisão da nike-site-06, A3): com `autoPlay` o vídeo pode rodar uma fração de segundo antes do JS pausar para quem pede movimento reduzido, e sem JS roda em loop (o botão de pausar depende de JS). Mantido porque o pedido é tocar ao entrar; reavaliar na fase 7
 
 ## Stack (fase 5)
 
@@ -90,6 +90,7 @@
 - Logo do cabeçalho: caixa tracejada "logo" no lugar do Jumpman
 - "A forma": posição dos marcadores 1–3 sobre a foto é aproximada (`posicao` em `components/secoes/home/Forma.tsx`); ajustar contra a foto oficial
 - Favicon: ainda não existe (404 no console); entra na etapa C
+- "Falar com a BrandForge" provisório tem opacidade 60% (texto 2,07:1): **não pode ir ao ar assim**; conferir na fase 7 que o contato foi preenchido
 - Vídeo do hero: 5,7 MB sem compressão (8 s, 1280×720); comprimir (meta ~1,5 MB, + WebM) antes da fase 9. Origem: gerado por IA (confirmado por Filipe em 2026-10-18); crédito "Vídeo da abertura: gerado por IA para este projeto." nos "Créditos e fontes"
 - Rótulos "Pausar vídeo"/"Tocar vídeo" aprovados por Filipe em 2026-10-18 (fora do COPY.md, acessibilidade WCAG 2.2.2)
 

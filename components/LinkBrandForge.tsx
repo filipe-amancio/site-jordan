@@ -11,7 +11,8 @@ export function LinkBrandForge({ className = "" }: { className?: string }) {
     );
   }
   return (
-    <span aria-disabled="true" data-provisorio="contato da BrandForge a preencher" className={`${className} opacity-60`}>
+    // PROVISÓRIO (não pode ir ao ar assim): texto 2,07:1 com a opacidade; some quando o contato chegar
+    <span data-provisorio="contato da BrandForge a preencher" className={`${className} opacity-60`}>
       Falar com a BrandForge
     </span>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { LinkBrandForge } from "@/components/LinkBrandForge";
 import { site } from "@/lib/site";
 
@@ -28,6 +28,12 @@ export function ModalCompra() {
   const [tentou, setTentou] = useState(false);
   const idTitulo = useId();
   const idAjuda = useId();
+  const refTitulo2 = useRef<HTMLHeadingElement>(null);
+
+  // O botão "Comprar" do passo 1 some ao avançar: leva o foco para o título do passo 2
+  useEffect(() => {
+    if (passo === 2) refTitulo2.current?.focus();
+  }, [passo]);
 
   function fechar() {
     ref.current?.close();
@@ -51,7 +57,7 @@ export function ModalCompra() {
           type="button"
           onClick={fechar}
           aria-label="Fechar"
-          className="flex h-12 items-center px-4 text-base hover:text-sola"
+          className="flex h-12 items-center px-4 text-base underline-offset-4 hover:underline"
         >
           Fechar
         </button>
@@ -83,8 +89,14 @@ export function ModalCompra() {
               ))}
             </div>
           </fieldset>
-          <p id={idAjuda} role={tentou && !tamanho ? "alert" : undefined} className={tentou && !tamanho ? "text-couro" : "cota text-base"}>
+          {/* Região viva sempre presente: o aviso é anunciado quando o texto muda */}
+          <p
+            id={idAjuda}
+            role="alert"
+            className={tentou && !tamanho ? "border-l-4 border-sola pl-3 text-base text-couro" : "cota text-base"}
+          >
             Escolha um tamanho para continuar.
+            {tentou && !tamanho ? <span className="sr-only"> Nenhum tamanho escolhido.</span> : null}
           </p>
           <button
             type="button"
@@ -97,7 +109,7 @@ export function ModalCompra() {
         </div>
       ) : (
         <div className="grid gap-5 p-5 md:p-8">
-          <h2 id={idTitulo} className="display text-2xl md:text-3xl">
+          <h2 id={idTitulo} ref={refTitulo2} tabIndex={-1} className="display text-2xl outline-none md:text-3xl">
             Esse par não sai da prancha.
           </h2>
           <p className="text-lg">
