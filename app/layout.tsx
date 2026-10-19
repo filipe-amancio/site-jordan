@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
 import { Cabecalho } from "@/components/Cabecalho";
 import { Rodape } from "@/components/Rodape";
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: ogBase,
   robots: siteIndexavel() ? { index: true, follow: true } : { index: false, follow: false },
+};
+
+// Tema escuro da prancha: barra do navegador no asfalto e controles nativos (rolagem, campos) escuros
+export const viewport: Viewport = {
+  themeColor: "#16171a",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

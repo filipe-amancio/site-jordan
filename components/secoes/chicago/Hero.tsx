@@ -17,7 +17,7 @@ export function HeroChicago() {
 
         <div className="mt-8 grid gap-8 md:mt-8 lg:grid-cols-[1fr_22rem] lg:items-end">
           <div>
-            <h1 id="hero-titulo" className="display text-[clamp(2.2rem,6.6vw,6rem)] uppercase">
+            <h1 id="hero-titulo" translate="no" className="display text-[clamp(2.2rem,6.6vw,6rem)] uppercase">
               Air Jordan 1
               <br />
               Chicago
@@ -40,7 +40,7 @@ export function HeroChicago() {
       </div>
 
       {/* No celular o carimbo vira barra fixa no rodapé com o "Comprar" (DIRECAO) */}
-      <div data-barra-compra className="fixed inset-x-0 bottom-0 z-20 border-t border-couro bg-asfalto md:hidden">
+      <div data-barra-compra className="fixed inset-x-0 bottom-0 z-20 border-t border-couro bg-asfalto pb-[env(safe-area-inset-bottom)] md:hidden">
         <div className="flex items-stretch">
           <p className="flex flex-1 items-center px-4 text-base font-medium">Air Jordan 1 Chicago</p>
           <BotaoComprar className="largura-expandida flex min-h-14 items-center bg-sola px-6 text-lg font-extrabold uppercase text-asfalto" />

@@ -50,7 +50,7 @@ export function ModalCompra() {
       id={ID_MODAL}
       aria-labelledby={idTitulo}
       onClose={aoFechar}
-      className="m-auto w-[min(100%-2rem,34rem)] border border-couro bg-asfalto p-0 text-couro"
+      className="m-auto w-[min(100%-2rem,34rem)] overscroll-contain border border-couro bg-asfalto p-0 text-couro"
     >
       <div className="flex justify-end border-b border-borracha">
         <button
@@ -74,7 +74,7 @@ export function ModalCompra() {
               {site.tamanhos.map((t) => (
                 <label
                   key={t}
-                  className="flex min-h-12 cursor-pointer items-center justify-center bg-asfalto text-lg has-checked:bg-couro has-checked:text-asfalto has-focus-visible:outline-2 has-focus-visible:outline-couro"
+                  className="flex min-h-12 cursor-pointer items-center justify-center bg-asfalto text-lg tabular-nums has-checked:bg-couro has-checked:text-asfalto has-focus-visible:outline-2 has-focus-visible:outline-couro"
                 >
                   <input
                     type="radio"

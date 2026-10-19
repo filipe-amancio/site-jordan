@@ -79,7 +79,20 @@
   html {
     background-color: var(--color-asfalto);
     color: var(--color-couro);
+    color-scheme: dark;
     -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgb(224 40 63 / 0.25);
+  }
+  a,
+  button,
+  summary,
+  label {
+    touch-action: manipulation;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
   body {
     font-family: var(--font-sans), system-ui, sans-serif;

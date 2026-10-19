@@ -4,8 +4,8 @@
 
 ## Agora
 
-- **Fase atual:** 7 — Revisão (não iniciada)
-- **Próximo passo:** criar `projeto/REVISAO.md` e rodar `npm run verificar` (bloco 1 da fase 7); antes, ler `referencias/checklist-entrega.md` e `referencias/revisao-playwright.md`
+- **Fase atual:** 8 — Preview e feedback (não iniciada)
+- **Próximo passo:** ler `fases/08-preview.md` e subir o preview na Vercel (conta pessoal); a CSP já libera a barra de comentários (`vercel.live`) quando `VERCEL_ENV=preview`
 - **Modelo recomendado:** Sonnet
 - **Última atualização:** 2026-10-19 por Filipe Amancio
 
@@ -20,7 +20,7 @@
 | 4 | Copy | concluída | `projeto/COPY.md` |
 | 5 | Stack | concluída | seção "Stack" abaixo |
 | 6 | Construção | concluída | código em `app/`, `components/`, `lib/` |
-| 7 | Revisão | não iniciada | `projeto/REVISAO.md` |
+| 7 | Revisão | concluída | `projeto/REVISAO.md` |
 | 8 | Preview e feedback | não iniciada | `projeto/FEEDBACK.md` |
 | 9 | Lançamento | não iniciada | seção "Lançamento" abaixo |
 | 10 | Portfólio | não iniciada | commit no portfólio do template |
@@ -85,6 +85,10 @@
 - [x] Decidir `noindex` do site: **fora do Google** (decidido em 2026-10-18)
 - [ ] Conferir as chamadas da vista explodida e os alts contra as fotos oficiais (etiqueta Nike Air na lingueta, cor da entressola, solado vermelho) — **quem:** nós, na fase 6 — desde 2026-10-18
 - [ ] Faixa do seletor de tamanho (BR 37 a 44) é só demonstração; confirmar ou trocar — **quem:** Filipe — desde 2026-10-18
+- [ ] Comprimir `hero.mp4` (meta ~1,5 MB + WebM) e medir de novo o LCP mobile da home (2,9 s na fase 7, causado pelo peso do vídeo) — **quem:** nós, antes da fase 9 — desde 2026-10-19
+- [ ] Testar num celular real (iPhone com notch para a barra fixa de compra; Android) — **quem:** Filipe, no preview da fase 8 — desde 2026-10-19
+- [ ] Confirmar a copy final no preview, depois das fotos — **quem:** Filipe, fase 8 — desde 2026-10-19
+- [ ] `npm audit` de novo (5 "high" só de dev, aceitas na fase 5) — **quem:** nós, fase 9 — desde 2026-10-19
 
 ## Provisórios a trocar antes de publicar
 
@@ -113,3 +117,4 @@
 - 2026-10-18 — Fase 6, etapa A: `lib/site.ts` (WebSite, nav, cores, tamanhos, fontes), tokens da direção B no `globals.css`, Archivo variável com eixo `wdth`, todas as seções de `/` e `/chicago` + rodapé, modal de compra (`<dialog>`) e 404 com a copy exata. Conferido em 375 e 1440: sem scroll horizontal, 1 H1, modal abre e marca tamanho; lint e tsc limpos.
 - 2026-10-19 — Fase 6, etapa D: vista explodida com faixa presa (`PalcoVistas`, GSAP + ScrollTrigger via `lib/gsap.ts`): scrub 0,8, snap por vista sem inércia, foto e número chegam atrasados (folhas sobrepostas), régua preenche em vermelho e marca `aria-current`, clique na régua leva à vista. Só com movimento liberado e tela ≥1024×720; senão (e sem JS) fica empilhada. Layout compacto abaixo de 896 px de altura. Conferido em 1440×900, 1366×768, 1024×768 (tudo cabe, sem scroll horizontal), 375 (empilhada), movimento reduzido ao vivo (reverte), ida e volta entre rotas (um pino só); `npm run verificar` passou.
 - 2026-10-19 — Fase 6 concluída: todas as seções conferidas e a animação aprovada por Filipe.
+- 2026-10-19 — Fase 7: revisão no build de produção (`projeto/REVISAO.md`): 71 ok, 12 corrigidas, 6 pendentes humanas. Corrigidos: `color-scheme` e `theme-color` escuros, `overscroll-contain` no modal, área segura na barra fixa, `text-wrap: balance` nos títulos, `touch-action` e realce de toque, `tabular-nums` nos tamanhos, `translate="no"` nos H1, rótulo do vídeo sem piscar na hidratação, CSP completa (sem nonce, páginas estáticas; `vercel.live` só no preview) e decisão dos rastreadores de IA no `robots.ts`. Preload do poster testado e revertido (sem ganho medido). Lighthouse desktop 100/96/100/66; mobile 95 (home) e 97 (/chicago)/96/100/66. A acessibilidade fica em 96 só pelos provisórios e o SEO em 66 pelo `noindex`. Vídeo em autoplay com movimento reduzido reavaliado (A3): no teste fica parado em `currentTime` 0, então a decisão segue. Screenshots em `projeto/referencias/revisao/`.

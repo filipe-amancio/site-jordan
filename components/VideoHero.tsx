@@ -12,7 +12,9 @@ type Props = {
 
 export function VideoHero({ src, poster, rotulo }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
-  const [tocando, setTocando] = useState(false);
+  // Começa como "tocando" porque o autoPlay já roda antes da hidratação (o rótulo não pisca);
+  // movimento reduzido e autoplay bloqueado corrigem pelo onPause e pelo catch do play()
+  const [tocando, setTocando] = useState(true);
 
   // O vídeo começa sozinho ao entrar no site (autoPlay nativo, não espera o JS). Só para se o
   // sistema pedir movimento reduzido.
@@ -21,7 +23,9 @@ export function VideoHero({ src, poster, rotulo }: Props) {
     if (!video) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       video.pause();
-      return;
+      // pause() num vídeo que ainda não começou não dispara o evento pause: sincroniza o rótulo
+      const quadro = requestAnimationFrame(() => setTocando(!video.paused));
+      return () => cancelAnimationFrame(quadro);
     }
     if (video.paused) video.play().catch(() => setTocando(false));
   }, []);
