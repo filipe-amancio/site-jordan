@@ -46,6 +46,8 @@
 - 2026-10-18 — **Hero da home com vídeo** (`public/videos/hero.mp4`, cópia de `fotos-videos/Sneaker_moving_through_smoke_water_…mp4`) no lugar da foto lateral: mudo, em loop, poster `hero-poster.jpg`, botão "Pausar vídeo"/"Tocar vídeo", parado no poster com movimento reduzido. Altura limitada pela tela para H1 e carimbo ficarem acima da dobra. O hero do /chicago continua com a foto lateral (pedido de Filipe Amancio)
 - 2026-10-18 — Vídeo do hero toca sozinho ao entrar (autoPlay nativo); com movimento reduzido fica parado no poster, com botão para tocar (aprovado por Filipe Amancio). Decisão consciente (revisão da nike-site-06, A3): com `autoPlay` o vídeo pode rodar uma fração de segundo antes do JS pausar para quem pede movimento reduzido, e sem JS roda em loop (o botão de pausar depende de JS). Mantido porque o pedido é tocar ao entrar; reavaliar na fase 7
 
+- 2026-10-18 — **Site fora do Google (`noindex`) também em produção**: na fase 9 não definir `SITE_INDEXAVEL=true`; robots bloqueia tudo e as páginas saem com `noindex, nofollow`. O portfólio é mostrado por link direto (BRIEF §2, regra 8) (aprovado por Filipe Amancio)
+
 ## Stack (fase 5)
 
 - Base: Next.js 16.4.2 + TypeScript + Tailwind (template)
@@ -79,7 +81,7 @@
 - [ ] Fotos oficiais do AJ1 Chicago (lateral, frente, trás, sola, detalhes; rotação se houver), com a origem de cada uma. A direção B **exige as quatro vistas** (lateral, frente, trás, sola) recortadas sem halo, para fundo escuro — **quem:** Filipe — desde 2026-10-17
 - [ ] Arquivos dos logos (SVG): Swoosh, Jumpman, Wings — **quem:** Filipe — desde 2026-10-17
 - [ ] Contato da BrandForge para o aviso final (link/e-mail/WhatsApp; entra logo da BrandForge?) — **quem:** Filipe — desde 2026-10-17
-- [ ] Decidir `noindex` do site (fase 6) — **quem:** nós — desde 2026-10-17
+- [x] Decidir `noindex` do site: **fora do Google** (decidido em 2026-10-18)
 - [ ] Conferir as chamadas da vista explodida e os alts contra as fotos oficiais (etiqueta Nike Air na lingueta, cor da entressola, solado vermelho) — **quem:** nós, na fase 6 — desde 2026-10-18
 - [ ] Faixa do seletor de tamanho (BR 37 a 44) é só demonstração; confirmar ou trocar — **quem:** Filipe — desde 2026-10-18
 
