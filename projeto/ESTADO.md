@@ -89,7 +89,8 @@
 - Fotos: todas as imagens são molduras `FotoProvisoria` (role="img" com o alt aprovado), sem foto de banco; viram `next/image` quando as oficiais chegarem
 - Logo do cabeçalho: caixa tracejada "logo" no lugar do Jumpman
 - "A forma": posição dos marcadores 1–3 sobre a foto é aproximada (`posicao` em `components/secoes/home/Forma.tsx`); ajustar contra a foto oficial
-- Favicon: ainda não existe (404 no console); entra na etapa C
+- Ícone (`app/icon.tsx`, `app/apple-icon.tsx`): marca neutra "1" asfalto sobre vermelho sola, gerada em código, até chegar o logo oficial (não é logo da Nike)
+- Fonte da imagem OG: `assets/Archivo_Expanded-ExtraBold.ttf`, instância wdth 125/wght 800 baixada da API do Google Fonts em 2026-10-18 (autorizado por Filipe), licença SIL OFL 1.1 em `assets/Archivo-OFL.txt`
 - "Falar com a BrandForge" provisório tem opacidade 60% (texto 2,07:1): **não pode ir ao ar assim**; conferir na fase 7 que o contato foi preenchido
 - Vídeo do hero: 5,7 MB sem compressão (8 s, 1280×720); comprimir (meta ~1,5 MB, + WebM) antes da fase 9. Origem: gerado por IA (confirmado por Filipe em 2026-10-18); crédito "Vídeo da abertura: gerado por IA para este projeto." nos "Créditos e fontes"
 - Rótulos "Pausar vídeo"/"Tocar vídeo" aprovados por Filipe em 2026-10-18 (fora do COPY.md, acessibilidade WCAG 2.2.2)

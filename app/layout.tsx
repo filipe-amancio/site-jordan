@@ -3,7 +3,7 @@ import { Archivo } from "next/font/google";
 import { Cabecalho } from "@/components/Cabecalho";
 import { Rodape } from "@/components/Rodape";
 import { JsonLdNegocio } from "@/components/seo/JsonLd";
-import { site, siteIndexavel, urlDoSite } from "@/lib/site";
+import { ogBase, site, siteIndexavel, urlDoSite } from "@/lib/site";
 import "./globals.css";
 
 // Archivo variável com o eixo de largura (62–125): expandida no display, normal no corpo,
@@ -20,11 +20,7 @@ export const metadata: Metadata = {
   title: site.nome,
   description: site.descricao,
   alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    siteName: site.nome,
-  },
+  openGraph: ogBase,
   robots: siteIndexavel() ? { index: true, follow: true } : { index: false, follow: false },
 };
 

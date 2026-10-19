@@ -92,6 +92,14 @@ export const site: Site = {
   ],
 };
 
+// Base do Open Graph. O merge do metadata é raso: página que define openGraph substitui o do
+// layout inteiro, então toda página espalha esta base para não perder siteName, locale e type.
+export const ogBase = {
+  type: "website",
+  locale: "pt_BR",
+  siteName: site.nome,
+} as const;
+
 // URL canônica do site: variável explícita, depois o domínio de produção da Vercel, depois localhost.
 export function urlDoSite(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
